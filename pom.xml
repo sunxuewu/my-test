@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.0.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>my-test</artifactId>
+	<version>${my-test.version}</version>
+	<name>my-test</name>
+	<description>Demo project for Spring Boot</description>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>my-test-api</module>
+		<module>my-test-service</module>
+		<module>my-test-common</module>
+	</modules>
+
+	<properties>
+		<my-test.version>0.0.1-SNAPSHOT</my-test.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<!--<jeecgboot.version>2.4.2</jeecgboot.version>-->
+		<!--<java.version>1.8</java.version>-->
+		<!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+		<spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
+		<xxl-job-core.version>2.2.0</xxl-job-core.version>
+		<fastjson.version>1.2.75</fastjson.version>
+		<knife4j-spring-boot-starter.version>2.0.4</knife4j-spring-boot-starter.version>
+		<knife4j-spring-ui.version>2.0.4</knife4j-spring-ui.version>
+		<postgresql.version>42.2.6</postgresql.version>
+		<ojdbc6.version>11.2.0.3</ojdbc6.version>
+		<sqljdbc4.version>4.0</sqljdbc4.version>
+		<mysql-connector-java.version>8.0.21</mysql-connector-java.version>
+		<dynamic-datasource-spring-boot-starter.version>3.2.0</dynamic-datasource-spring-boot-starter.version>
+		<hutool-all.version>5.3.8</hutool-all.version>
+		<redisson.version>3.13.6</redisson.version>
+		<commons-beanutils.version>1.9.4</commons-beanutils.version>
+		<guava.version>29.0-jre</guava.version>
+		<mybatis-plus.version>3.4.1</mybatis-plus.version>
+		<druid.version>1.1.22</druid.version>
+		<commons.version>2.6</commons.version>
+		<aliyun-java-sdk-dysmsapi.version>2.1.0</aliyun-java-sdk-dysmsapi.version>
+		<aliyun.oss.version>3.11.2</aliyun.oss.version>
+		<shiro.version>1.7.0</shiro.version>
+		<java-jwt.version>3.11.0</java-jwt.version>
+		<shiro-redis.version>3.1.0</shiro-redis.version>
+		<codegenerate.version>1.2.5</codegenerate.version>
+		<autopoi-web.version>1.2.5</autopoi-web.version>
+		<minio.version>8.0.3</minio.version>
+		<justauth-spring-boot-starter.version>1.3.4</justauth-spring-boot-starter.version>
+		<dom4j.version>1.6.1</dom4j.version>
+		<qiniu-java-sdk.version>7.4.0</qiniu-java-sdk.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>alimaven</id>
+			<name>aliyun maven</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>alimaven</id>
+			<name>aliyun maven</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<layout>default</layout>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<!--去除内置tomcat 打成war包会有冲突-->
+			<!--<exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>-->
+		</dependency>
+		<!--<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<scope>provided</scope>
+			</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!--<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-aop</artifactId>
+			</dependency>-->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<!--compile（默认）编译，运行，测试均有效
+					provided，编译，测试有效，运行时无效，最终不会被打包，可能容器已经提供，例如servlet-api
+					runtime 运行，测试有效，编译时无效，不太理解
+					test， 只在测试阶段有效 ，如JUnit
+					system 编译，测试有效，运行时无效，
+				-->
+
+
+
+			<!-- SpringBoot打成war包时需要 -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.1.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!--单元测试-->
+			<!--<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+			</dependency>-->
+
+			<!--Mysql驱动-->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>6.0.2</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<!--阿里数据库连接池 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>1.2.1</version>
+			</dependency>
+
+			<!--Mybatis-Plus-->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>3.4.2</version>
+			</dependency>
+
+			<!-- 热部署模块 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>1.2.49</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.16.10</version>
+			</dependency>
+
+			<!-- hutool工具类-->
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-all</artifactId>
+				<version>${hutool-all.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>2.9.0</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<build>
+		<!--<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<includes>
+					<include>**/**</include>
+					<include>templates/*.html</include>
+				</includes>
+			</resource>
+
+			<resource>
+				<directory>${basedir}/src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>-->
+
+			<!--<resource>
+				<directory>${basedir}/src/main/webapp</directory>
+				&lt;!&ndash;注意此次必须要放在此目录下才能被访问到 &ndash;&gt;
+				&lt;!&ndash;部署到linux时，必须将targetPath标签放开，不然存在页面路径问题，无法访问资源 &ndash;&gt;
+				<targetPath>META-INF/resources</targetPath>
+				<includes>
+					<include>**/**</include>
+				</includes>
+			</resource>-->
+		<!--</resources>-->
+
+		<!--<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                    &lt;!&ndash;执行入口类&ndash;&gt;
+					<mainClass>com.example.HjzxApplication</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			&lt;!&ndash; 跳过单元测试 &ndash;&gt;
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		&lt;!&ndash;最终的打包名称&ndash;&gt;
+		<finalName>my-test-${version}</finalName>-->
+	</build>
+
+</project>

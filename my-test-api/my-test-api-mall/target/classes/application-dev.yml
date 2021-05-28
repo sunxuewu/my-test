@@ -1,0 +1,81 @@
+server:
+  port: 9999
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  #数据源类型
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    filter: stat,wall,log4j  #druid监控
+    druid:
+      initial-size: 2
+      min-idle: 2
+      max-active: 5
+      web-stat-filter:
+#        enabled: true
+#        url-pattern: /*
+        session-stat-enable: true
+        session-stat-max-count: 100
+      stat-view-servlet:
+        url-pattern: /druid/*
+        reset-enable: false
+#        login-username: admin
+#        login-password: 111111
+
+
+  #      filters: stat,wall
+  #        exclusions: *.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*
+  thymeleaf:
+    enabled: true  #开启thymeleaf视图解析
+    prefix: classpath:/templates/
+    suffix: .html  #后缀名
+    encoding: utf-8  #编码
+    cache: false  #是否使用缓存
+#    mode: HTML  #严格的HTML语法模式
+
+
+
+
+#mybatis:
+#  mapper-locations: classpath:mapping/*Mapper.xml
+#  type-aliases-package: com.example.pojo
+
+#mybatis plus 设置
+mybatis-plus:
+  mapper-locations: classpath:com/example/mapper/**/*.xml
+  global-config:
+    # 关闭MP3.0自带的banner
+    banner: false
+    db-config:
+      #主键类型  0:"数据库ID自增",1:"该类型为未设置主键类型", 2:"用户输入ID",3:"全局唯一ID (数字类型唯一ID)", 4:"全局唯一ID UUID",5:"字符串全局唯一ID (idWorker 的字符串表示)";
+      id-type: ASSIGN_ID
+      # 默认数据库表下划线命名
+      table-underline: true
+  configuration:
+    #不使用驼峰原模原样对应
+    map-underscore-to-camel-case: false
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 返回类型为Map,显示null对应的字段
+    call-setters-on-nulls: true
+
+
+#showSql
+logging:
+  level: trace
+  level.com.example: trace
+  level.com.example.mapper: debug
+  level.com.example.demo: info
+  path: ./
+  file: demo.log
+
+
+
+#base64 encoded secret
+
+
+
+
+
