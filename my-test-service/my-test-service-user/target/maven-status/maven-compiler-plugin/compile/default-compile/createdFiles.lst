@@ -1,0 +1,6 @@
+com\example\domain\User$UserBuilder.class
+com\example\mapper\UserMapper.class
+com\example\service\IUserService.class
+com\example\service\impl\UserServiceImpl.class
+com\example\dto\UserDto.class
+com\example\domain\User.class

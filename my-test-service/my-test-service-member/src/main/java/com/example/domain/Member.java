@@ -1,10 +1,14 @@
 package com.example.domain;
 
-import lombok.Data;
+import lombok.*;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Builder
 public class Member {
-	private int id;
+	private Long id;
 	private String name;
 	private int age;
 }

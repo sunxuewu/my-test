@@ -1,0 +1,6 @@
+com\example\service\IMemberService.class
+com\example\mapper\MemberMapper.class
+com\example\service\impl\MemberServiceImpl.class
+com\example\domain\Member$MemberBuilder.class
+com\example\domain\Member.class
+com\example\dto\MemberDto.class

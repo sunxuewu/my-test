@@ -25,4 +25,16 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<resources>
+			<!--引入手写sql的xml文件，否则api模块无法扫描-->
+			<resource>
+				<directory>${basedir}/src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
 </project>

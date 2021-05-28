@@ -32,11 +32,6 @@ public class TestLogicImpl implements ITestLogis {
     public UserVo test() {
         User user = userService.getById(1);
         Member member = memberService.getById(1);
-        Page<Member> page = new Page(2,3);
-        IPage<Member> iPage = memberService.page(page);
-        System.out.println(iPage);
-
-//        memberMapper.selectPage();
         return UserVo.builder().user(user).member(member).build();
     }
 }
