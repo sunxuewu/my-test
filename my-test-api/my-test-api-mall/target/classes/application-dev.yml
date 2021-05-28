@@ -8,38 +8,36 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
     username: root
     password: root
-    filter: stat,wall,log4j  #druid监控
     druid:
-      initial-size: 2
-      min-idle: 2
-      max-active: 5
+      filter: stat,wall,log4j  #druid监控
+      initial-size: 5 #连接池初始化大小
+      min-idle: 10 #最小空闲连接数
+      max-active: 20 #最大连接数
       web-stat-filter:
-#        enabled: true
-#        url-pattern: /*
-        session-stat-enable: true
-        session-stat-max-count: 100
-      stat-view-servlet:
-        url-pattern: /druid/*
-        reset-enable: false
-#        login-username: admin
-#        login-password: 111111
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+#redis配置
+  redis:
+    host: 10.10.111.136
+    port: 6379
+    password:
+    database: 0
+#    lettuce:
+#      pool:
+#        max-active: 8
+#        max-wait: 300ms
+#        max-idle: 16
+#        min-idle: 8
 
-  #      filters: stat,wall
-  #        exclusions: *.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*
+
   thymeleaf:
     enabled: true  #开启thymeleaf视图解析
     prefix: classpath:/templates/
     suffix: .html  #后缀名
     encoding: utf-8  #编码
     cache: false  #是否使用缓存
+
 #    mode: HTML  #严格的HTML语法模式
 
-
-
-
-#mybatis:
-#  mapper-locations: classpath:mapping/*Mapper.xml
-#  type-aliases-package: com.example.pojo
 
 #mybatis plus 设置
 mybatis-plus:
@@ -64,12 +62,8 @@ logging:
   level.com.example: trace
   level.com.example.mapper: debug
   level.com.example.demo: info
-  path: ./
+  path: ./log/
   file: demo.log
-
-
-
-#base64 encoded secret
 
 
 

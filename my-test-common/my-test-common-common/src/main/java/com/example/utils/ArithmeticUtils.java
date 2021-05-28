@@ -1,10 +1,13 @@
 package com.example.utils;
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 
 /**
  * @author xw.s
  * @date 2021/4/7
  */
+@Component
 public class ArithmeticUtils {
     //默认除法运算精度
     private static final int DEF_DIV_SCALE = 10;

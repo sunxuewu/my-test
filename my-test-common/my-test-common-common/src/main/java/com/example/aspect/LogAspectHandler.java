@@ -1,4 +1,4 @@
-package com.example.config.aspect;
+package com.example.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -13,6 +13,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * 访问日志拦截器
  * @author xw.s
  * @date 2021/4/7
  */

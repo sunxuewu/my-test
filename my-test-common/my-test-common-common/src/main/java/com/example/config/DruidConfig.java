@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 阿里Druid连接池设置
  * @author xw.s
  * 2021-04-07
  */
@@ -25,11 +26,9 @@ public class DruidConfig {
     @Bean
     public ServletRegistrationBean statViewServlet(){
         ServletRegistrationBean<StatViewServlet> bean = new ServletRegistrationBean<StatViewServlet>( new StatViewServlet(), "/druid/*" );
-
-        Map<String,String> iniParms=new HashMap<>(  );
-
+        Map<String,String> iniParms=new HashMap<>();
         iniParms.put( "loginUsername","admin" );//登录druid的用户名
-        iniParms.put( "loginPassword","123456" );//登录druid的密码
+        iniParms.put( "loginPassword","111111" );//登录druid的密码
         iniParms.put("allow","");//默认允许所有
         iniParms.put( "deny","192.168.***.***" );//自己本机的ip地址
         bean.setInitParameters( iniParms );
