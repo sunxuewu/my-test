@@ -1,4 +1,11 @@
 spring:
   profiles:
     active: dev
-    include: person
+    include:
+      - person
+      - mysql
+      - log
+      - mysql
+      - mybatisPlus
+      - redis
+      - thymeleaf

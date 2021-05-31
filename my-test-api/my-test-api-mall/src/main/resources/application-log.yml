@@ -1,0 +1,8 @@
+#showSql
+logging:
+  level: trace
+  level.com.example: trace
+  level.com.example.mapper: debug
+  level.com.example.demo: info
+  path: ./log/
+  file: demo.log

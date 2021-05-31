@@ -1,0 +1,13 @@
+# 使用hutool的redis客户端，配置在./config/下，当前配置没有启用
+spring:
+  redis: #redis配置
+    host: 10.10.111.136
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 3000
+        max-idle: 16
+        min-idle: 8

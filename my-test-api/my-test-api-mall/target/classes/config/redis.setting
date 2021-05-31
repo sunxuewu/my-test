@@ -9,8 +9,8 @@ timeout = 2000
 connectionTimeout = 2000
 # 读取超时，默认timeout
 soTimeout = 2000
-# 密码，默认无
-password = pckjxsj
+# 密码，默认无，如果没有密码就注释这条配置，否则出错
+# password =
 # 数据库序号，默认0
 database = 0
 # 客户端名，默认"Hutool"

@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.utils.RedisUtils;
+import com.example.utils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.After;
 import org.junit.Before;
@@ -29,11 +29,13 @@ public class RedisTest {
 	}
 
 	/**
-     * 测试redis
+     * 测试redis的get和set
 	 */
 	@Test
-	public void test() {
-		RedisUtils.get("aaa");
+	public void testGetAndSet() {
+		RedisUtil.set("name:aaa", "bbb");
+		String name = RedisUtil.get("name:aaa");
+		System.out.println(name);
 	}
 
 }
